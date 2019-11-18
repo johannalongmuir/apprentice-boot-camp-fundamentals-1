@@ -5,24 +5,42 @@ import java.util.Scanner;
 class Snap {
     private int player1Score;
     private int player2Score;
+
+    // TODO Generic Deck deck
     private AnimalDeck deck;
 
+
+    // TODO GenericDeck deck
     Snap(AnimalDeck deck) {
         this.deck = deck;
         deck.shuffle();
     }
 
+
+
+
     public static void main(String[] args) {
+        //TODO Generic Deck deck = new Animal or General deck
+        //TODO change below to Generic Deck
         Snap snap = new Snap(new AnimalDeck());
         snap.play();
     }
 
+
+
+
     void play() {
         Scanner scanner = new Scanner(System.in);
 
+        // TODO Generic Card
         AnimalCard previousCard = null;
         while (deck.getCards().length > 0) {
+
+            // TODO Generic Card
             AnimalCard currentCard = deck.deal();
+
+
+
             System.out.println(currentCard);
             String input = scanner.nextLine();
             if (input.length() > 0 && input.charAt(0) == 'a') {
