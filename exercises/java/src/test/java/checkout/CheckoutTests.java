@@ -47,6 +47,7 @@ public class CheckoutTests {
         assertThat(checkout.total()).isEqualTo(260);
     }
 
+
     @Test
     public void oneB() {
         Checkout checkout = new Checkout();
@@ -131,5 +132,27 @@ public class CheckoutTests {
         
         checkout.scan("C");
         assertThat(checkout.total()).isEqualTo(310);
+    }
+
+
+    @Test
+    public void fourC() {
+        Checkout checkout = new Checkout();
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        assertThat(checkout.total()).isEqualTo(70);
+    }
+
+    @Test
+    public void fiveD() {
+        Checkout checkout = new Checkout();
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        assertThat(checkout.total()).isEqualTo(60);
     }
 }

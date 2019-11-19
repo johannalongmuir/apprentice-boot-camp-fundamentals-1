@@ -1,12 +1,29 @@
 package checkout;
 
 class Checkout {
+
+    // ScannerForProduct.scan(sku)
+    // productList of Products
+    // basket
+    // discount Class. Id product + discount.
+    // checkout
+    // receipt
+
+
+
     private int total;
     private int numberOfA = 0;
     private int numberOfB = 0;
+    private int numberOfC = 0;
+    private int numberOfD = 0;
     private Receipt receipt = new Receipt();
 
+
     void scan(String sku) {
+        Product newProduct = ScannerForProduct.scan(sku);
+        //basket add newProduct
+
+
         if ("A".equals(sku)) {
             total += 50;
             receipt.scannedA();
@@ -28,6 +45,16 @@ class Checkout {
         } else if ("B".equals(sku)) {
             numberOfB++;
             if (numberOfB % 2 == 0) {
+                total -= 15;
+            }
+        } else if ("C".equals(sku)) {
+            numberOfC++;
+            if (numberOfC % 4 == 0) {
+                total -= 10;
+            }
+        } else if ("D".equals(sku)) {
+            numberOfD++;
+            if (numberOfD % 5 == 0) {
                 total -= 15;
             }
         }

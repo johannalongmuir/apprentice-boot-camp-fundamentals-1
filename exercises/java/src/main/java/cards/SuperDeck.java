@@ -12,13 +12,13 @@ public class SuperDeck implements Deck {
         AnimalDeck animalDeck = new AnimalDeck();
         PlayingCardDeck playingCardDeck = new PlayingCardDeck();
 
-        for (int i = 0; i < playingCardDeck.getCards().length; i++) {
+        while (playingCardDeck.getCards().length > 0) {
             Card deal = playingCardDeck.deal();
             cards.add(deal);
             cards.add(deal);
         }
 
-        for (int i = 0; i < animalDeck.getCards().length; i++) {
+        while (animalDeck.getCards().length > 0) {
             animalDeck.deal();
             cards.add(animalDeck.deal());
         }
