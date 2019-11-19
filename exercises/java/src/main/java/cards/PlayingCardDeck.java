@@ -11,11 +11,8 @@ public class PlayingCardDeck implements DeckMethods {
         for (Suit suit:Suit.values()) {
             for (int faceValue = 0; faceValue < 13; faceValue++)
                 cards[suit.ordinal()*13+faceValue] = new PlayingCard(suit, faceValue);
-
         }
     }
-
-
 
 
     @Override

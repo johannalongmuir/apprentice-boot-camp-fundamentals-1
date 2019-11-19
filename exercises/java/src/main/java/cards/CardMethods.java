@@ -1,7 +1,7 @@
 package cards;
 
 public interface CardMethods {
-    boolean snap( CardMethods otherCard);
+    boolean snap(CardMethods otherCard);
 
 
 
