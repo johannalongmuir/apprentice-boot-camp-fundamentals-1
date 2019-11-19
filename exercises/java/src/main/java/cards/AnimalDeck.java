@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class AnimalDeck implements DeckMethods {
+class AnimalDeck implements Deck {
 
     private List<AnimalCard> cards;
 
@@ -24,7 +24,7 @@ class AnimalDeck implements DeckMethods {
     }
 
     @Override
-    public CardMethods deal() {
+    public Card deal() {
         return cards.remove(0);
     }
 

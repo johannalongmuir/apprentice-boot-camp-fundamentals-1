@@ -1,10 +1,10 @@
 package cards;
 
-public interface DeckMethods {
+public interface Deck {
 
     void shuffle();
 
-    CardMethods deal();
+    Card deal();
 
     String[] getCards();
 

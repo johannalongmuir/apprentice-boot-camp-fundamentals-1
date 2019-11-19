@@ -1,19 +1,9 @@
 package cards;
 
-public class Card {
-    private int value;
-    private int suit;
+public interface Card {
+    boolean snap(Card otherCard);
 
-    Card(int suit, int value) {
-        this.suit = suit;
-        this.value = value;
-    }
 
-    int getValue() {
-        return value;
-    }
 
-    int getSuit() {
-        return suit;
-    }
+
 }

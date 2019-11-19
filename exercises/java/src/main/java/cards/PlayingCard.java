@@ -1,6 +1,6 @@
 package cards;
 
-public class PlayingCard implements CardMethods {
+public class PlayingCard implements Card {
     private final Suit suit;
     private final int faceValue;
 
@@ -53,7 +53,7 @@ public class PlayingCard implements CardMethods {
 
 
     @Override
-    public boolean snap(CardMethods otherCard) {
+    public boolean snap(Card otherCard) {
         return false;
     }
 }

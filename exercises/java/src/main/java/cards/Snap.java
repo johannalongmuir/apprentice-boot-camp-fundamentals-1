@@ -5,9 +5,9 @@ import java.util.Scanner;
 class Snap {
     private int player1Score;
     private int player2Score;
-    private DeckMethods deck;
+    private Deck deck;
 
-    Snap(DeckMethods deck) {
+    Snap(Deck deck) {
         this.deck = deck;
         deck.shuffle();
     }
@@ -26,10 +26,10 @@ class Snap {
     void play() {
         Scanner scanner = new Scanner(System.in);
 
-        CardMethods previousCard = null;
+        Card previousCard = null;
         while (deck.getCards().length > 0) {
 
-            CardMethods currentCard = deck.deal();
+            Card currentCard = deck.deal();
 
             System.out.println(currentCard);
             String input = scanner.nextLine();

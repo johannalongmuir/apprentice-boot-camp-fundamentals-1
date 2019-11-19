@@ -1,6 +1,6 @@
 package cards;
 
-public class AnimalCard implements CardMethods {
+public class AnimalCard implements Card {
 
     private final Animal animal;
 
@@ -16,7 +16,7 @@ public class AnimalCard implements CardMethods {
 
 
     @Override
-    public boolean snap(CardMethods otherCard) {
+    public boolean snap(Card otherCard) {
         return false;
     }
 }
