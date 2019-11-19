@@ -1,22 +1,26 @@
 package cards;
 
-public class CardDeck {
+public class CardDeck implements DeckMethods {
     public static void main(String[] args) {
-        CardDeck cardDeck = new CardDeck(); // refactor to Deck?
-
-        // build the deck. Refactor Method name? + return the array deck
-
+        CardDeck cardDeck = new CardDeck();
         String[] deckInOrder = cardDeck.getCards();
-
-        // Print out deckInOrder.
         for(String card: deckInOrder){
             System.out.println(card);
         }
     }
 
 
+    @Override
+    public void shuffle() {
 
-    String[] getCards() {
+    }
+
+    @Override
+    public AnimalCard deal() {
+        return null;
+    }
+
+    public String[] getCards() {
         String[] result = new String[52];
         Card[] deck = new Card[52];
 
@@ -26,8 +30,6 @@ public class CardDeck {
                 deck [suit*13+faceValue] = cardNew;
             }
         }
-
-
 
         int cardNumber = 0;
 
