@@ -2,9 +2,8 @@ package cards;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
-public class PlayingCardDeck implements DeckMethods {
+public class PlayingCardDeck implements Deck {
     private PlayingCard[] cards = new PlayingCard[52];
 
     public PlayingCardDeck() {
@@ -21,8 +20,8 @@ public class PlayingCardDeck implements DeckMethods {
     }
 
     @Override
-    public CardMethods deal() {
-        CardMethods cardToReturn = cards[0];
+    public Card deal() {
+        Card cardToReturn = cards[0];
         cards = Arrays.copyOfRange(cards,1,cards.length);
         return cardToReturn;
     }
