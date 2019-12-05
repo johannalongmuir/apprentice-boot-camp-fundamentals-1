@@ -1,14 +1,16 @@
 package checkout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Checkout {
 
     // ScannerForProduct.scan(sku)
     // productList of Products
-    // basket
-    // discount Class. Id product + discount.
+    // new basket object.
+    // discount Class.
     // checkout
     // receipt
-
 
 
     private int total;
@@ -17,10 +19,16 @@ class Checkout {
     private int numberOfC = 0;
     private int numberOfD = 0;
     private Receipt receipt = new Receipt();
+    private List<Product> basketList = new ArrayList<>();
+
 
 
     void scan(String sku) {
-        Product newProduct = ScannerForProduct.scan(sku);
+        basketList.add(ProductList.createProduct(sku));
+        int newTotal = Total.total(basketList);
+        System.out.println(newTotal);
+
+
         //basket add newProduct
 
 

@@ -3,6 +3,7 @@ package checkout;
 public class Receipt {
 
     private String text = "";
+    private String textTest = "";
     private int aCountdown = 3;
     private int total;
     private int bCountdown = 2;
@@ -12,6 +13,11 @@ public class Receipt {
     String text() {
         return text + "Total: " + total;
     }
+
+    // add method here
+    // for (Product a : basketList) {
+    //        textTest += a.getReceiptLine();
+    // }
 
     void scannedA() {
         text += "A: 50";
