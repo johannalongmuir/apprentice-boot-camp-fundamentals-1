@@ -44,6 +44,7 @@ public class CheckoutTests {
         checkout.scan("A");
         checkout.scan("A");
         checkout.scan("A");
+
         assertThat(checkout.total()).isEqualTo(260);
     }
 

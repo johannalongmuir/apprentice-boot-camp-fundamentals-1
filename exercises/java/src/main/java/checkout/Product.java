@@ -28,7 +28,8 @@ public class Product {
         this.receiptLine = receiptLine;
     }
 
-    // Make a map? String name =  key? int price = value?
-
-
+    // TODO change this so not changing original price
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }

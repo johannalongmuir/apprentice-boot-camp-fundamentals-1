@@ -58,6 +58,7 @@ public class ReceiptTests {
         checkout.scan("C");
         checkout.scan("C");
         checkout.scan("C");
+
         assertThat(checkout.receipt()).containsSequence("C: 20\n",
                 "C: 20\n",
                 "C: 20\n",

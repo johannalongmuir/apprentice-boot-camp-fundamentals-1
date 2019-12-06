@@ -4,73 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Checkout {
-
-    // ScannerForProduct.scan(sku)
-    // productList of Products
     // new basket object.
     // discount Class.
     // checkout
     // receipt
 
-
     private int total;
-    private int numberOfA = 0;
-    private int numberOfB = 0;
-    private int numberOfC = 0;
-    private int numberOfD = 0;
     private Receipt receipt = new Receipt();
-    private List<Product> basketList = new ArrayList<>();
-
-
+    protected List<Product> basketList = new ArrayList<>();
 
     void scan(String sku) {
-        basketList.add(ProductList.createProduct(sku));
-        int newTotal = Total.total(basketList);
-        System.out.println(newTotal);
-
-
-        //basket add newProduct
-
-
-        if ("A".equals(sku)) {
-            total += 50;
-            receipt.scannedA();
-        } else if ("B".equals(sku)) {
-            total += 30;
-            receipt.scannedB();
-        } else if ("C".equals(sku)) {
-            total += 20;
-            receipt.scannedC();
-        } else if ("D".equals(sku)) {
-            total += 15;
-            receipt.scannedD();
-        }
-        if ("A".equals(sku)) {
-            numberOfA++;
-            if (numberOfA % 3 == 0) {
-                total -= 20;
-            }
-        } else if ("B".equals(sku)) {
-            numberOfB++;
-            if (numberOfB % 2 == 0) {
-                total -= 15;
-            }
-        } else if ("C".equals(sku)) {
-            numberOfC++;
-            if (numberOfC % 4 == 0) {
-                total -= 10;
-            }
-        } else if ("D".equals(sku)) {
-            numberOfD++;
-            if (numberOfD % 5 == 0) {
-                total -= 15;
-            }
-        }
+        Basket.addProduct(sku, basketList);
     }
 
     int total() {
+        // static
+        basketList = Discount.applyDiscount(basketList);
+        total = Total.total(basketList);
         return total;
     }
+
+//        tests bacically start from here
+//        if ("A".equals(sku)) {
+//            receipt.scannedA();
+//        } else if ("B".equals(sku)) {
+//            receipt.scannedB();
+//        } else if ("C".equals(sku)) {
+//            receipt.scannedC();
+//        } else if ("D".equals(sku)) {
+//            receipt.scannedD();
+//        }
+
 
     public String receipt() {
         return receipt.text();
