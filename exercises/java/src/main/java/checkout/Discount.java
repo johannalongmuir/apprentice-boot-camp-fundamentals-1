@@ -28,7 +28,6 @@ class Discount {
                 if (numberOfC % 4 == 0) {
                     a.setPrice(10);
                     a.setReceiptLine("C: 20 - 10 (4 for 70)\n");
-
                 }
             } else if ("D".equals(a.getName())) {
                 numberOfD++;
