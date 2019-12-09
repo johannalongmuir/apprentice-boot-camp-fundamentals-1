@@ -19,4 +19,13 @@ public class ProductListTest {
         Assertions.assertThat(result.getName()).isEqualTo("B");
         Assertions.assertThat(result.getPrice()).isEqualTo(30);
     }
+
+//    Add exception for Invalid Product
+//    @Test
+//    public void whenGivenInvalidProduct() {
+//        String sku = "M";
+//        Product result = ProductList.createProduct(sku);
+//        Assertions.assertThat(result.getName()).isEqualTo("A");
+//        Assertions.assertThat(result.getPrice()).isEqualTo(50);
+//    }
 }

@@ -10,6 +10,7 @@ public class ReceiptTests {
     public void singleItem() {
         Checkout checkout = new Checkout();
         checkout.scan("A");
+        checkout.total();
         assertThat(checkout.receipt()).containsSequence(
                 "A: 50\n",
                 "Total: 50");
@@ -22,6 +23,7 @@ public class ReceiptTests {
         checkout.scan("B");
         checkout.scan("C");
         checkout.scan("D");
+        checkout.total();
         assertThat(checkout.receipt()).containsSequence(
                 "A: 50\n",
                 "B: 30\n",
@@ -40,6 +42,7 @@ public class ReceiptTests {
         checkout.scan("C");
         checkout.scan("D");
         checkout.scan("B");
+        checkout.total();
         assertThat(checkout.receipt()).containsSequence(
                 "A: 50\n",
                 "A: 50\n",
@@ -58,6 +61,7 @@ public class ReceiptTests {
         checkout.scan("C");
         checkout.scan("C");
         checkout.scan("C");
+        checkout.total();
 
         assertThat(checkout.receipt()).containsSequence("C: 20\n",
                 "C: 20\n",
@@ -74,6 +78,7 @@ public class ReceiptTests {
         checkout.scan("D");
         checkout.scan("D");
         checkout.scan("D");
+        checkout.total();
         assertThat(checkout.receipt()).containsSequence("D: 15\n",
                 "D: 15\n",
                 "D: 15\n",
