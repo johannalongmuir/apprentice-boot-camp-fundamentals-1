@@ -2,9 +2,9 @@ package checkout;
 
 import java.util.List;
 
-public class Discount {
+class Discount {
 
-    protected static List<Product> applyDiscount(List<Product> basketList) {
+    static void applyDiscount(List<Product> basketList) {
         int numberOfA = 0;
         int numberOfB = 0;
         int numberOfC = 0;
@@ -38,6 +38,5 @@ public class Discount {
                 }
             }
         }
-        return basketList;
     }
 }

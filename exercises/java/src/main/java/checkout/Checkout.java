@@ -6,8 +6,8 @@ import java.util.List;
 class Checkout {
     private int total;
     private Receipt receipt = new Receipt();
-    protected List<Product> basketList = new ArrayList<>();
-
+    //TODO Refactor basket out better and make list of type Basket
+    private List<Product> basketList = new ArrayList<>();
 
 
     void scan(String sku) {
@@ -15,7 +15,7 @@ class Checkout {
     }
 
     int total() {
-        basketList = Discount.applyDiscount(basketList);
+        Discount.applyDiscount(basketList);
         total = Total.total(basketList);
         return total;
     }

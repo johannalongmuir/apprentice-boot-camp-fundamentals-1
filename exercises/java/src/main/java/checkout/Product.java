@@ -6,7 +6,7 @@ public class Product {
     private int price;
     private String receiptLine;
 
-    public Product(String name, int price, String receiptLine) {
+    protected Product(String name, int price, String receiptLine) {
         this.name = name;
         this.price = price;
         this.receiptLine = receiptLine;
@@ -24,12 +24,12 @@ public class Product {
         return receiptLine;
     }
 
-    public void setReceiptLine(String receiptLine) {
+    protected void setReceiptLine(String receiptLine) {
         this.receiptLine = receiptLine;
     }
 
     // TODO change this so not changing original price
-    public void setPrice(int price) {
+    protected void setPrice(int price) {
         this.price = price;
     }
 }
