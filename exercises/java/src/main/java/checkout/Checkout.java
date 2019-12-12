@@ -20,6 +20,11 @@ class Checkout {
         return total;
     }
 
+    int totalwithoutDiscount() {
+        total = Total.total(basketList);
+        return total;
+    }
+
     public String receipt() {
         return receipt.receipt(basketList) + "Total: " + total;
     }

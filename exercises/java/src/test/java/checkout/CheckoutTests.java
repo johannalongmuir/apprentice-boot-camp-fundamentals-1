@@ -156,4 +156,18 @@ public class CheckoutTests {
         checkout.scan("D");
         assertThat(checkout.total()).isEqualTo(60);
     }
+
+    @Test
+    public void checkTotalBeforeDisount() {
+        Checkout checkout = new Checkout();
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        assertThat(checkout.totalwithoutDiscount()).isEqualTo(75);
+        //assertThat(checkout.total()).isEqualTo(60);
+
+
+    }
 }
